@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=devic-width, initial-scale=1.0">
+    <title>Video en reproduccion automática con imagenes y texto</title> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: lightpink;
+        }
+        h1 {
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: colorChange 10s infinite;
+        }
+        @keyframes colorChange {
+            0% { color: rgb(108, 28, 155); }
+            25% { color: rgb(112, 248, 58); }
+            50% { color: rgb(17, 188, 255); }
+            75% { color: rgb(225, 225, 0); }
+            100% { color: rgb(225, 0, 225); }
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: aliceblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border: none;
+        }
+        .texto-debajo {
+            text-align: justify;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #000000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .texto-debajo ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .sin-vigneta {
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>wait wait wait what the heeeeeeeeell</h1>
+        <div class="content">
+            <img src="data:image/jpeg;base64,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" alt="xd">
+            <iframe src="https://drive.google.com/file/d/1VoG96iebbgpTte2pzfx6ulijyqUGbSWu/preview" allow="autoplay"></iframe>
+            <img src="data:image/jpeg;base64,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" alt="xd">
+        </div>
+
+        <div class="texto-debajo">
+            <ul>
+                <li class="sin-vigneta"> Top: 10 razones para tener muchos gatos en casa.</li>
+                <br><br>
+                <li>1. Compañía silenciosa</li>
+                <li class="sin-vigneta">Los gatos son compañeros tranquilos que no necesitan estar todo el tiempo encima de ti, pero siempre están cerca para ofrecerte compañía cuando lo necesitas.</li>
+                <br><br>
+                <li>2. Bajo mantenimiento</li>
+                <li class="sin-vigneta">A diferencia de muchos otros animales de compañía, los gatos no requieren paseos diarios. Son muy independientes y se ocupan de su propia limpieza.</li>
+                <br><br>
+                <li>3. Afecto sin agobio</li>
+                <li class="sin-vigneta">Aunque a veces son reservados, los gatos pueden ser muy cariñosos, ronroneando y acurrucándose contigo cuando se sienten cómodos y seguros.</li>
+                <br><br>
+                <li>4. Ayudan a reducir el estrés</li>
+                <li class="sin-vigneta">Está demostrado que acariciar a un gato o simplemente escuchar su ronroneo puede reducir el estrés y la ansiedad, promoviendo una sensación de calma.</li>
+                <br><br>
+                <li>5. Mantenedores de la casa limpia de plagas</li>
+                <li class="sin-vigneta">Los gatos son cazadores naturales, y tener uno en casa puede ayudarte a mantener lejos a roedores e insectos no deseados.</li>
+                <br><br>
+                <li>6. Perfectos para espacios pequeños</li>
+                <li class="sin-vigneta">Los gatos no necesitan mucho espacio, lo que los convierte en ideales para apartamentos y casas pequeñas. No requieren grandes áreas para correr o jugar.</li>
+                <br><br>
+                <li>7. Entretenidos y juguetones</li>
+                <li class="sin-vigneta">A pesar de su independencia, los gatos son muy curiosos y les encanta jugar, lo que puede proporcionar momentos muy divertidos, especialmente con juguetes sencillos.</li>
+                <br><br>
+                <li>8. Beneficios para la salud</li>
+                <li class="sin-vigneta">Algunos estudios sugieren que tener un gato puede reducir el riesgo de enfermedades cardíacas debido al efecto relajante de su presencia y ronroneo.</li>
+                <br><br>
+                <li>9. Fácil entrenamiento para el arenero</li>
+                <li class="sin-vigneta">Los gatos aprenden rápidamente a usar su arenero, lo que facilita mucho la tarea de mantener limpia la casa.</li>
+                <br><br>
+                <li>10. Son fascinantes y únicos</li>
+                <li class="sin-vigneta">Cada gato tiene su propia personalidad y comportamiento únicos. Pueden ser misteriosos y encantadores, lo que los hace siempre interesantes de observar.</li>
+                <br><br>
+                <li class="sin-vigneta">Tener un gato no solo te ofrece compañía, sino también una experiencia enriquecedora que puede mejorar tu bienestar y la atmósfera de tu hogar. ¿Te gustaría tener uno o ya tienes un gatito en casa?</li></li>
+            </ul>
+    </div>
+
+</body>
+</html>
